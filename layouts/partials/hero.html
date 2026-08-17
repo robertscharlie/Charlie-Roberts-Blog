@@ -1,11 +1,13 @@
 <section class="hero" id="about">
-  <p class="eyebrow">About</p>
-  <h1>{{ .Site.Params.author }}</h1>
-  <p class="tagline">{{ .Site.Params.tagline }}</p>
-  {{ with site.GetPage "/about" }}
-  <div class="content-body hero-bio">{{ .Content }}</div>
-  {{ end }}
-  <div class="button-row">
-    <a class="btn btn-primary" href="#projects">View projects</a>
+  <div class="hero-content">
+    <p class="eyebrow">About</p>
+    <h1>{{ .Site.Params.author }}</h1>
+    <p class="tagline">{{ .Site.Params.tagline }}</p>
+    {{ with site.GetPage "/about" }}
+    <div class="content-body hero-bio">{{ .Content }}</div>
+    {{ end }}
+    <div class="button-row">
+      <a class="btn btn-primary" href="#projects">View projects</a>
+    </div>
   </div>
 </section>
