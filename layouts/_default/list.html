@@ -5,9 +5,9 @@
       {{ with .Content }}<div class="content-body" style="padding-top:0;">{{ . }}</div>{{ end }}
     </div>
 
-    <div class="card-grid">
-      {{ range .Pages.ByDate.Reverse }}
-      {{ partial "project-card.html" . }}
+    <div class="project-list">
+      {{ range $i, $p := .Pages.ByDate.Reverse }}
+      {{ partial "project-row.html" (dict "page" $p "index" (add $i 1)) }}
       {{ end }}
     </div>
   </div>

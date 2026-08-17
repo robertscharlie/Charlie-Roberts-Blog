@@ -2,10 +2,11 @@
   {{ partial "hero.html" . }}
 
   <section class="section" id="projects" aria-labelledby="projects-heading">
+    <p class="eyebrow">Selected work</p>
     <h2 id="projects-heading">Projects</h2>
-    <div class="card-grid">
-      {{ range (where .Site.RegularPages "Section" "projects").ByDate.Reverse }}
-      {{ partial "project-card.html" . }}
+    <div class="project-list">
+      {{ range $i, $p := (where site.RegularPages "Section" "projects").ByDate.Reverse }}
+      {{ partial "project-row.html" (dict "page" $p "index" (add $i 1)) }}
       {{ end }}
     </div>
   </section>
