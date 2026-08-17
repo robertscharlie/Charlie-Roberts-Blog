@@ -1,16 +1,16 @@
 /* ---------------------------------------------------------
    Design tokens
-   Editorial portfolio: warm paper background, a serif display
-   face for headlines, one confident accent, numbered project
-   rows. Dense rhythm — clean and minimal, not spacious.
+   Editorial portfolio: soft blue-tinted background, a serif
+   display face for headlines, one confident accent, numbered
+   project rows. Dense rhythm — clean and minimal, not spacious.
 --------------------------------------------------------- */
 :root {
-  --bg: #F7F5F0;
-  --surface: #FFFFFF;
-  --border: #E4E0D4;
-  --text: #1A1917;
-  --text-soft: #6B6862;
-  --text-faint: #A39E93;
+  --bg: #EAEEFA;
+  --surface: #F4F6FC;
+  --border: #D2D9EE;
+  --text: #171A22;
+  --text-soft: #5A5F72;
+  --text-faint: #9298AC;
   --accent: #2F5DE3;
   --accent-dark: #1F3FA6;
   --accent-tint: rgba(47, 93, 227, 0.08);
