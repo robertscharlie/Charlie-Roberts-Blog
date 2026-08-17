@@ -1,9 +1,11 @@
-<section class="hero">
-  <p class="eyebrow">Portfolio</p>
+<section class="hero" id="about">
+  <p class="eyebrow">About</p>
   <h1>{{ .Site.Params.author }}</h1>
   <p class="tagline">{{ .Site.Params.tagline }}</p>
+  {{ with site.GetPage "/about" }}
+  <div class="content-body hero-bio">{{ .Content }}</div>
+  {{ end }}
   <div class="button-row">
-    <a class="btn btn-primary" href="{{ (site.GetPage "/projects").RelPermalink }}">View projects</a>
-    <a class="btn btn-secondary" href="{{ (site.GetPage "/about").RelPermalink }}">About me</a>
+    <a class="btn btn-primary" href="#projects">View projects</a>
   </div>
 </section>

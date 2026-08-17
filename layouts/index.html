@@ -1,7 +1,7 @@
 {{ define "main" }}
   {{ partial "hero.html" . }}
 
-  <section class="section" aria-labelledby="projects-heading">
+  <section class="section" id="projects" aria-labelledby="projects-heading">
     <h2 id="projects-heading">Projects</h2>
     <div class="card-grid">
       {{ range (where .Site.RegularPages "Section" "projects").ByDate.Reverse }}

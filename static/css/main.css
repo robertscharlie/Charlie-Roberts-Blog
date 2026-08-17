@@ -1,7 +1,7 @@
 /* ---------------------------------------------------------
    Design tokens
    Clean, minimal portfolio: light surface, one confident
-   accent, strong type hierarchy, generous whitespace.
+   accent, strong type hierarchy, tight consistent spacing.
 --------------------------------------------------------- */
 :root {
   --bg: #FAFAFA;
@@ -37,7 +37,7 @@ body {
   font-family: var(--font-sans);
   color: var(--text);
   background-color: var(--bg);
-  line-height: 1.65;
+  line-height: 1.55;
   font-size: 17px;
   -webkit-font-smoothing: antialiased;
 }
@@ -89,7 +89,7 @@ h1, h2, h3 {
   gap: 1rem;
   max-width: 960px;
   margin: 0 auto;
-  padding: 2rem 1.5rem 1rem;
+  padding: 1.5rem 1.5rem 0.75rem;
 }
 
 .site-header .brand {
@@ -131,7 +131,7 @@ h1, h2, h3 {
 .hero {
   max-width: 960px;
   margin: 0 auto;
-  padding: 4.5rem 1.5rem 4rem;
+  padding: 2.5rem 1.5rem 2rem;
 }
 
 .hero .eyebrow {
@@ -141,11 +141,11 @@ h1, h2, h3 {
   color: var(--accent);
   text-transform: uppercase;
   letter-spacing: 0.08em;
-  margin: 0 0 1rem;
+  margin: 0 0 0.6rem;
 }
 
 .hero h1 {
-  font-size: clamp(2.4rem, 5vw, 3.5rem);
+  font-size: clamp(2.2rem, 5vw, 3rem);
   font-weight: 800;
   max-width: 16ch;
 }
@@ -153,15 +153,23 @@ h1, h2, h3 {
 .hero p.tagline {
   color: var(--text-soft);
   max-width: 52ch;
-  font-size: 1.15rem;
-  margin: 1rem 0 0;
+  font-size: 1.1rem;
+  margin: 0.6rem 0 0;
 }
+
+.hero-bio {
+  margin-top: 1.25rem;
+  padding: 0;
+  max-width: 60ch;
+}
+
+.hero-bio p:first-child { margin-top: 0; }
 
 .hero .button-row {
   display: flex;
   gap: 1rem;
   flex-wrap: wrap;
-  margin-top: 2.25rem;
+  margin-top: 1.5rem;
 }
 
 /* ---------------- Sections ---------------- */
@@ -173,7 +181,7 @@ h1, h2, h3 {
 }
 
 .section {
-  padding: 3.5rem 0;
+  padding: 2.5rem 0;
   border-top: 1px solid var(--border);
 }
 
@@ -185,8 +193,8 @@ h1, h2, h3 {
 .card-grid {
   display: grid;
   grid-template-columns: 1fr;
-  gap: 1.5rem;
-  margin-top: 1.75rem;
+  gap: 1.25rem;
+  margin-top: 1.25rem;
 }
 
 .card {
@@ -194,7 +202,7 @@ h1, h2, h3 {
   background: var(--surface);
   border: 1px solid var(--border);
   border-radius: var(--radius);
-  padding: 2.25rem;
+  padding: 1.75rem;
   color: var(--text);
   transition: border-color 0.15s ease, box-shadow 0.15s ease, transform 0.15s ease;
 }
@@ -209,7 +217,7 @@ h1, h2, h3 {
 .card-photo {
   aspect-ratio: 16 / 9;
   border-radius: var(--radius-sm);
-  margin-bottom: 1.5rem;
+  margin-bottom: 1.1rem;
   overflow: hidden;
   display: flex;
   align-items: center;
@@ -246,7 +254,7 @@ h1, h2, h3 {
 /* ---------------- Single / list pages ---------------- */
 
 .page-header {
-  padding: 3rem 0 1rem;
+  padding: 2rem 0 0.75rem;
 }
 
 .page-header h1 { font-size: clamp(1.8rem, 3.5vw, 2.6rem); }
@@ -273,7 +281,7 @@ h1, h2, h3 {
 .single-photo {
   aspect-ratio: 21 / 9;
   border-radius: var(--radius);
-  margin-top: 1.5rem;
+  margin-top: 1rem;
   overflow: hidden;
   display: flex;
   align-items: center;
@@ -296,7 +304,7 @@ h1, h2, h3 {
 }
 
 .content-body {
-  padding: 1rem 0 3rem;
+  padding: 0.75rem 0 2rem;
   max-width: 68ch;
 }
 
@@ -333,14 +341,14 @@ h1, h2, h3 {
 
 .content-body img { max-width: 100%; border-radius: var(--radius-sm); }
 
-.list-page .card-grid { margin-top: 1.5rem; }
+.list-page .card-grid { margin-top: 1rem; }
 
 /* ---------------- Footer ---------------- */
 
 .site-footer {
   max-width: 960px;
   margin: 0 auto;
-  padding: 2.5rem 1.5rem 3.5rem;
+  padding: 1.75rem 1.5rem 2.5rem;
   border-top: 1px solid var(--border);
   display: flex;
   justify-content: space-between;
