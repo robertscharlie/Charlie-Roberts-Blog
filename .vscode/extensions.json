@@ -1,0 +1,8 @@
+{
+  "recommendations": [
+    "yzhang.markdown-all-in-one",
+    "tamasfe.even-better-toml",
+    "budparr.language-hugo-vscode",
+    "eliostruyf.vscode-front-matter"
+  ]
+}

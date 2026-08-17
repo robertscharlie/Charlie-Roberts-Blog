@@ -1,0 +1,21 @@
+baseURL = "https://robertscharlie.github.io/Charlie-Roberts-Blog/"
+languageCode = "en-gb"
+title = "Charlie Roberts"
+enableRobotsTXT = true
+
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true
+  [markup.highlight]
+    style = "monokai"
+    lineNos = false
+    noClasses = true
+
+[params]
+  description = "Side projects from an electrical engineering student — games, web apps, and the odd circuit."
+  author = "Charlie Roberts"
+  tagline = "Side projects, from an electrical engineering student who also writes software."
+
+[permalinks]
+  projects = "/projects/:slug/"

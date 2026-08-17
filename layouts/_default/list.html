@@ -1,0 +1,14 @@
+{{ define "main" }}
+  <div class="list-page">
+    <div class="page-header">
+      <h1>{{ .Title }}</h1>
+      {{ with .Content }}<div class="content-body" style="padding-top:0;">{{ . }}</div>{{ end }}
+    </div>
+
+    <div class="project-list">
+      {{ range $i, $p := .Pages.ByDate.Reverse }}
+      {{ partial "project-row.html" (dict "page" $p "index" (add $i 1)) }}
+      {{ end }}
+    </div>
+  </div>
+{{ end }}

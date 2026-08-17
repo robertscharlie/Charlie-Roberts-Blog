@@ -1,0 +1,27 @@
+{{ define "main" }}
+  <article>
+    <div class="page-header">
+      <h1>{{ .Title }}</h1>
+      <div class="page-meta">
+        {{ if not .Date.IsZero }}<span>{{ .Date.Format "2 January 2006" }}</span>{{ end }}
+        {{ with .Params.tags }}
+        <span>
+          {{ range . }}<span class="tag">{{ . }}</span> {{ end }}
+        </span>
+        {{ end }}
+      </div>
+    </div>
+    {{ if eq .Section "projects" }}
+    <div class="single-photo">
+      {{ if .Params.image }}
+      <img src="{{ .Params.image | relURL }}" alt="{{ .Title }}">
+      {{ else }}
+      <span class="single-photo-label">Photo coming soon</span>
+      {{ end }}
+    </div>
+    {{ end }}
+    <div class="content-body">
+      {{ .Content }}
+    </div>
+  </article>
+{{ end }}

@@ -1,0 +1,33 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "Hugo: Preview site",
+      "type": "shell",
+      "command": "hugo server -D",
+      "isBackground": true,
+      "problemMatcher": [],
+      "presentation": {
+        "reveal": "always",
+        "panel": "dedicated"
+      },
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      }
+    },
+    {
+      "label": "Hugo: New project",
+      "type": "shell",
+      "command": "hugo new projects/${input:projectName}.md",
+      "problemMatcher": []
+    }
+  ],
+  "inputs": [
+    {
+      "id": "projectName",
+      "type": "promptString",
+      "description": "File name for the new project (e.g. my-new-project)"
+    }
+  ]
+}

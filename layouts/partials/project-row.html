@@ -1,0 +1,16 @@
+{{ $p := .page }}
+<a class="project-row" href="{{ $p.RelPermalink }}">
+  <span class="project-index">{{ printf "%02d" .index }}</span>
+  <div class="project-photo">
+    {{ if $p.Params.image }}
+    <img src="{{ $p.Params.image | relURL }}" alt="{{ $p.Title }}" loading="lazy">
+    {{ else }}
+    <span class="project-photo-label">{{ substr $p.Title 0 1 }}</span>
+    {{ end }}
+  </div>
+  <div class="project-info">
+    <h3>{{ $p.Title }}</h3>
+    <p>{{ $p.Summary }}</p>
+  </div>
+  <span class="project-arrow" aria-hidden="true">&rarr;</span>
+</a>
