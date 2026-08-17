@@ -1,6 +1,6 @@
 baseURL = "https://robertscharlie.github.io/Charlie-Roberts-Blog/"
 languageCode = "en-gb"
-title = "Charlie Roberts — Circuits & Signals"
+title = "Charlie Roberts"
 enableRobotsTXT = true
 
 [markup]

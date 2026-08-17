@@ -1,8 +1,8 @@
-# EE project portfolio (Hugo)
+# Project portfolio (Hugo)
 
 A static site scaffold for a project portfolio, built with [Hugo](https://gohugo.io). Deploys for free on GitHub Pages, with room for a custom domain.
 
-Design: a "schematic paper" theme — grid-paper background, a copper trace accent, and a hero navigation element drawn as a circuit trace connecting to Projects / About. Section headings use real EE reference designators (U1, GND) instead of generic icons.
+Design: clean and minimal — light surface, a single accent colour, strong type hierarchy, and large single-column project cards with generous whitespace.
 
 ## 1. Install Hugo locally
 
@@ -45,13 +45,12 @@ date: 2026-08-17
 draft: false          # set false to publish
 summary: "One sentence for the card preview."
 tags: ["circuits"]
-designator: "U1"      # shown as the reference-designator badge
 image: "images/projects/my-project.jpg"   # optional; leave "" for a placeholder slot
 math: false            # set true to load MathJax on this page
 ---
 ```
 
-Put image files under `static/images/projects/` — the path in `image` is relative to `static/`. Leave `image` blank and the card/project page shows a dashed placeholder slot instead, so entries stay visually consistent until you add a photo.
+Put image files under `static/images/projects/` — the path in `image` is relative to `static/`. Leave `image` blank and the card/project page shows a placeholder slot instead, so entries stay visually consistent until you add a photo.
 
 ## 4. Put it on GitHub
 
@@ -97,4 +96,4 @@ static/css/      # stylesheet, CNAME
 
 - Colours, type, and spacing are all CSS custom properties at the top of `static/css/main.css` — change the palette there and it cascades everywhere.
 - Site title, tagline, nav, and description live in `hugo.toml`.
-- The hero circuit-trace graphic is inline SVG in `layouts/partials/hero.html` — it's just three nodes on a bus line, easy to relabel or extend if you add more sections.
+- The hero (`layouts/partials/hero.html`) is just a heading, tagline, and two buttons — easy to extend.

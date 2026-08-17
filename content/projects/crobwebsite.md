@@ -2,7 +2,6 @@
 title: "crobwebsite"
 date: 2025-07-18
 draft: false
-designator: "U2"
 summary: "A Django site with accounts, per-user file storage, a to-do list with email reminders, and a staff-only server status page."
 tags: ["python", "django", "web"]
 math: false

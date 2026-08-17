@@ -2,7 +2,7 @@
   {{ partial "hero.html" . }}
 
   <section class="section" aria-labelledby="projects-heading">
-    <h2 id="projects-heading"><span class="designator">U1</span> Projects</h2>
+    <h2 id="projects-heading">Projects</h2>
     <div class="card-grid">
       {{ range (where .Site.RegularPages "Section" "projects").ByDate.Reverse }}
       {{ partial "project-card.html" . }}

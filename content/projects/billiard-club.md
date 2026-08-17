@@ -2,7 +2,6 @@
 title: "Billiard Club"
 date: 2024-10-22
 draft: false
-designator: "U1"
 summary: "A 2D pool game with full 8-ball rules and real ball physics, built for my A Level Computer Science NEA."
 tags: ["python", "pygame", "game-dev"]
 math: false

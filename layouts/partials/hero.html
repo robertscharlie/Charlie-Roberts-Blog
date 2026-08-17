@@ -1,33 +1,9 @@
 <section class="hero">
-  <div class="hero-copy">
-    <h1>{{ .Site.Title }}</h1>
-    <p>{{ .Site.Params.tagline }}</p>
+  <p class="eyebrow">Portfolio</p>
+  <h1>{{ .Site.Params.author }}</h1>
+  <p class="tagline">{{ .Site.Params.tagline }}</p>
+  <div class="button-row">
+    <a class="btn btn-primary" href="{{ (site.GetPage "/projects").RelPermalink }}">View projects</a>
+    <a class="btn btn-secondary" href="{{ (site.GetPage "/about").RelPermalink }}">About me</a>
   </div>
-
-  <svg class="hero-schematic" viewBox="0 0 800 150" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Site map drawn as a schematic trace connecting Projects and About">
-    <!-- main bus trace -->
-    <path class="trace" d="M40,40 H760" />
-
-    <!-- drop to Projects -->
-    <path class="trace" d="M270,40 V95" />
-    <!-- drop to About -->
-    <path class="trace" d="M530,40 V95" />
-
-    <circle class="via" cx="40" cy="40" r="4" />
-    <circle class="via" cx="760" cy="40" r="4" />
-
-    <a href="{{ (site.GetPage "/projects").RelPermalink }}">
-      <circle class="via" cx="270" cy="40" r="4" />
-      <circle class="node-dot" cx="270" cy="100" r="5" />
-      <text class="node-label" x="270" y="126" text-anchor="middle">U1 — Projects</text>
-      <text class="node-sub" x="270" y="140" text-anchor="middle">builds &amp; simulations</text>
-    </a>
-
-    <a href="{{ (site.GetPage "/about").RelPermalink }}">
-      <circle class="via" cx="530" cy="40" r="4" />
-      <circle class="node-dot" cx="530" cy="100" r="5" />
-      <text class="node-label" x="530" y="126" text-anchor="middle">GND — About</text>
-      <text class="node-sub" x="530" y="140" text-anchor="middle">who's behind this</text>
-    </a>
-  </svg>
 </section>

@@ -4,7 +4,6 @@ date: {{ .Date }}
 draft: true
 summary: ""
 tags: []
-designator: ""
 image: ""
 math: false
 ---

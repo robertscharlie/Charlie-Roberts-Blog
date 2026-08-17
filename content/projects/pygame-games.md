@@ -2,7 +2,6 @@
 title: "Pygame Games"
 date: 2023-09-11
 draft: false
-designator: "U3"
 summary: "A small collection of games built in Pygame while learning Python and game dev — a brick-breaker and a from-scratch Tetris."
 tags: ["python", "pygame", "game-dev"]
 math: false
