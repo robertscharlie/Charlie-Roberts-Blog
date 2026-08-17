@@ -5,11 +5,7 @@
     <h2 id="projects-heading"><span class="designator">U1</span> Projects</h2>
     <div class="card-grid">
       {{ range (where .Site.RegularPages "Section" "projects").ByDate.Reverse }}
-      <a class="card" href="{{ .RelPermalink }}">
-        <span class="card-designator">{{ if .Params.designator }}{{ .Params.designator }}{{ else }}U{{ end }}</span>
-        <h3>{{ .Title }}</h3>
-        <p>{{ .Summary }}</p>
-      </a>
+      {{ partial "project-card.html" . }}
       {{ end }}
     </div>
   </section>

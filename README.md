@@ -46,9 +46,12 @@ draft: false          # set false to publish
 summary: "One sentence for the card preview."
 tags: ["circuits"]
 designator: "U1"      # shown as the reference-designator badge
+image: "images/projects/my-project.jpg"   # optional; leave "" for a placeholder slot
 math: false            # set true to load MathJax on this page
 ---
 ```
+
+Put image files under `static/images/projects/` — the path in `image` is relative to `static/`. Leave `image` blank and the card/project page shows a dashed placeholder slot instead, so entries stay visually consistent until you add a photo.
 
 ## 4. Put it on GitHub
 

@@ -11,6 +11,15 @@
         {{ end }}
       </div>
     </div>
+    {{ if eq .Section "projects" }}
+    <div class="single-photo{{ if not .Params.image }} is-empty{{ end }}">
+      {{ if .Params.image }}
+      <img src="{{ .Params.image | relURL }}" alt="{{ .Title }}">
+      {{ else }}
+      <span class="single-photo-label">{{ if .Params.designator }}{{ .Params.designator }}{{ else }}U{{ end }} — photo</span>
+      {{ end }}
+    </div>
+    {{ end }}
     <div class="content-body">
       {{ .Content }}
     </div>

@@ -1,0 +1,12 @@
+<a class="card" href="{{ .RelPermalink }}">
+  <div class="card-photo{{ if not .Params.image }} is-empty{{ end }}">
+    {{ if .Params.image }}
+    <img src="{{ .Params.image | relURL }}" alt="{{ .Title }}" loading="lazy">
+    {{ else }}
+    <span class="card-photo-label">{{ if .Params.designator }}{{ .Params.designator }}{{ else }}U{{ end }} — photo</span>
+    {{ end }}
+  </div>
+  <span class="card-designator">{{ if .Params.designator }}{{ .Params.designator }}{{ else }}U{{ end }}</span>
+  <h3>{{ .Title }}</h3>
+  <p>{{ .Summary }}</p>
+</a>
