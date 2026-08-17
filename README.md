@@ -1,8 +1,8 @@
-# EE blog + portfolio (Hugo)
+# EE project portfolio (Hugo)
 
-A static site scaffold for a blog and project portfolio, built with [Hugo](https://gohugo.io). Deploys for free on GitHub Pages, with room for a custom domain.
+A static site scaffold for a project portfolio, built with [Hugo](https://gohugo.io). Deploys for free on GitHub Pages, with room for a custom domain.
 
-Design: a "schematic paper" theme — grid-paper background, a copper trace accent, and a hero navigation element drawn as a circuit trace connecting to Projects / Blog / About. Section headings use real EE reference designators (U1, R1, GND) instead of generic icons.
+Design: a "schematic paper" theme — grid-paper background, a copper trace accent, and a hero navigation element drawn as a circuit trace connecting to Projects / About. Section headings use real EE reference designators (U1, GND) instead of generic icons.
 
 ## 1. Install Hugo locally
 
@@ -30,12 +30,6 @@ Open the URL it prints (usually `http://localhost:1313`). `-D` includes draft po
 
 ## 3. Add content
 
-New blog post:
-
-```
-hugo new blog/my-post-title.md
-```
-
 New project:
 
 ```
@@ -46,19 +40,14 @@ This uses `archetypes/default.md`. Fill in the front matter at the top of the ne
 
 ```yaml
 ---
-title: "My Post Title"
+title: "My Project Title"
 date: 2026-08-17
-draft: false        # set false to publish
-summary: "One sentence for the card/list preview."
+draft: false          # set false to publish
+summary: "One sentence for the card preview."
 tags: ["circuits"]
-math: false          # set true to load MathJax on this page
+designator: "U1"      # shown as the reference-designator badge
+math: false            # set true to load MathJax on this page
 ---
-```
-
-For a project card, also add:
-
-```yaml
-designator: "U1"     # shown as the small reference-designator badge
 ```
 
 ## 4. Put it on GitHub
@@ -94,7 +83,6 @@ Then in the repo on GitHub: **Settings → Pages → Build and deployment → So
 
 ```
 content/
-  blog/          # blog posts
   projects/      # portfolio projects
   about.md
 layouts/         # HTML templates (Go templates)

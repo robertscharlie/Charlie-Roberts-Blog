@@ -2,9 +2,9 @@
 title: "About"
 ---
 
-I'm Charlie Roberts, an electrical engineering student writing about the projects I build and the things I break along the way — mostly software tools that model circuits and signals: simulators, filter design tools, and the odd control-systems experiment.
+I'm Charlie Roberts, an electrical engineering student who also builds software on the side — games in Pygame, web apps in Django, and whatever else I'm learning at the time.
 
-This site is where the build logs, debugging war stories, and finished projects live.
+This site is where those projects live.
 
 **Find me elsewhere:**
 

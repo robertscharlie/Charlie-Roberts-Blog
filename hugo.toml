@@ -13,9 +13,9 @@ enableRobotsTXT = true
     noClasses = true
 
 [params]
-  description = "Circuits, signals, and side projects — an electrical engineering blog and portfolio."
+  description = "Side projects from an electrical engineering student — games, web apps, and the odd circuit."
   author = "Charlie Roberts"
-  tagline = "Notes from the bench: circuits, signal chains, and the software that models them."
+  tagline = "Side projects, from an electrical engineering student who also writes software."
 
 [[menu.main]]
   name = "Projects"
@@ -23,15 +23,9 @@ enableRobotsTXT = true
   weight = 1
 
 [[menu.main]]
-  name = "Blog"
-  url = "/blog/"
-  weight = 2
-
-[[menu.main]]
   name = "About"
   url = "/about/"
-  weight = 3
+  weight = 2
 
 [permalinks]
-  blog = "/blog/:slug/"
   projects = "/projects/:slug/"

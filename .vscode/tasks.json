@@ -17,12 +17,6 @@
       }
     },
     {
-      "label": "Hugo: New blog post",
-      "type": "shell",
-      "command": "hugo new blog/${input:postName}.md",
-      "problemMatcher": []
-    },
-    {
       "label": "Hugo: New project",
       "type": "shell",
       "command": "hugo new projects/${input:projectName}.md",
@@ -30,11 +24,6 @@
     }
   ],
   "inputs": [
-    {
-      "id": "postName",
-      "type": "promptString",
-      "description": "File name for the new post (e.g. my-second-post)"
-    },
     {
       "id": "projectName",
       "type": "promptString",

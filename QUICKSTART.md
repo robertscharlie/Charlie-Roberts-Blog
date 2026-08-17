@@ -24,11 +24,4 @@ hugo new projects/my-new-project.md
 ```
 Fill in the front matter (`title`, `date`, `summary`, `designator`), write the body, set `draft: false`, then commit and push. It appears on the site automatically, styled the same as everything else.
 
-## Adding a new blog post (ongoing)
-
-Same idea — run **"Hugo: New blog post"**, or:
-```
-hugo new blog/my-post-title.md
-```
-
 See `README.md` for the full reference (DNS details, customising colours/type, project structure).
