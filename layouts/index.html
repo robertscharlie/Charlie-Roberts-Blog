@@ -1,8 +1,8 @@
 {{ define "main" }}
-  {{ partial "hero.html" . }}
+  {{ partial "about-section.html" . }}
 
   <section class="section" id="projects" aria-labelledby="projects-heading">
-    <p class="eyebrow">Selected work</p>
+    <p class="eyebrow">02 &middot; Projects</p>
     <h2 id="projects-heading">Projects</h2>
     <div class="project-list">
       {{ range $i, $p := (where site.RegularPages "Section" "projects").ByDate.Reverse }}

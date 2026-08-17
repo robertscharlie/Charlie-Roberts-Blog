@@ -17,15 +17,5 @@ enableRobotsTXT = true
   author = "Charlie Roberts"
   tagline = "Side projects, from an electrical engineering student who also writes software."
 
-[[menu.main]]
-  name = "Projects"
-  url = "/projects/"
-  weight = 1
-
-[[menu.main]]
-  name = "About"
-  url = "/about/"
-  weight = 2
-
 [permalinks]
   projects = "/projects/:slug/"

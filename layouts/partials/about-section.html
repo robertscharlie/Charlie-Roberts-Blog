@@ -1,0 +1,7 @@
+<section class="section" id="about" aria-labelledby="about-heading">
+  <p class="eyebrow">01 &middot; About</p>
+  <h2 id="about-heading">About</h2>
+  {{ with site.GetPage "/about" }}
+  <div class="content-body section-body">{{ .Content }}</div>
+  {{ end }}
+</section>

@@ -1,8 +1,9 @@
 /* ---------------------------------------------------------
    Design tokens
-   Editorial portfolio: soft blue-tinted background, a serif
-   display face for headlines, one confident accent, numbered
-   project rows. Dense rhythm — clean and minimal, not spacious.
+   Sticky-sidebar portfolio: persistent identity/nav/social
+   on the left, numbered sections scrolling on the right.
+   Soft blue-tinted background, serif display face, dense
+   rhythm — clean and minimal, not spacious.
 --------------------------------------------------------- */
 :root {
   --bg: #EAEEFA;
@@ -15,6 +16,8 @@
   --accent-dark: #1F3FA6;
   --accent-tint: rgba(47, 93, 227, 0.08);
   --radius: 8px;
+  --shell-max: 1080px;
+  --sidebar-width: 250px;
 
   --font-display: "Fraunces", Georgia, serif;
   --font-sans: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
@@ -87,91 +90,98 @@ h1, h2, h3 {
 .text-link span { display: inline-block; transition: transform 0.15s ease; }
 .text-link:hover span { transform: translateX(4px); }
 
-/* ---------------- Header ---------------- */
+/* ---------------- Page shell ---------------- */
 
-.site-header {
+.page-shell {
   display: flex;
-  align-items: center;
-  justify-content: space-between;
-  flex-wrap: wrap;
-  gap: 0.75rem;
-  max-width: 880px;
+  align-items: flex-start;
+  gap: 2.5rem;
+  max-width: var(--shell-max);
   margin: 0 auto;
-  padding: 1rem 1.5rem 0.5rem;
+  padding: 0 1.5rem;
 }
 
-.site-header .brand {
+.content-column {
+  flex: 1 1 auto;
+  min-width: 0;
+}
+
+/* ---------------- Sidebar ---------------- */
+
+.sidebar {
+  flex: 0 0 var(--sidebar-width);
+  width: var(--sidebar-width);
+  position: sticky;
+  top: 0;
+  align-self: flex-start;
+  padding: 2rem 0;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.sidebar-intro { margin-bottom: 1.75rem; }
+
+.sidebar-name {
+  display: block;
   font-family: var(--font-display);
   font-weight: 600;
-  font-size: 1.05rem;
+  font-size: 1.4rem;
   color: var(--text);
 }
 
-.site-nav {
-  display: flex;
-  gap: 1.25rem;
+.sidebar-name:hover { text-decoration: none; color: var(--accent); }
+
+.sidebar-role {
+  margin: 0.4rem 0 0;
+  color: var(--text-soft);
+  font-size: 0.88rem;
+  max-width: 30ch;
 }
 
-.site-nav a {
+.sidebar-nav {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin-bottom: 1.75rem;
+}
+
+.sidebar-nav a {
   font-family: var(--font-mono);
-  font-size: 0.7rem;
+  font-size: 0.75rem;
   text-transform: uppercase;
   letter-spacing: 0.08em;
   font-weight: 600;
   color: var(--text-soft);
 }
 
-.site-nav a:hover { color: var(--text); text-decoration: none; }
-.site-nav a[aria-current="page"] { color: var(--accent); }
+.sidebar-nav a:hover { color: var(--accent); text-decoration: none; }
 
-/* ---------------- Hero ---------------- */
-
-.hero {
-  max-width: 880px;
-  margin: 0 auto;
-  padding: 1.25rem 1.5rem 1rem;
+.sidebar-social {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  margin-top: auto;
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
 }
 
-.hero h1 {
-  font-size: clamp(1.7rem, 3.6vw, 2.1rem);
-  max-width: 18ch;
-}
-
-.hero p.tagline {
-  font-family: var(--font-sans);
-  color: var(--text-soft);
-  max-width: 56ch;
-  font-size: 0.98rem;
-  margin: 0.35rem 0 0;
-}
-
-.hero-bio {
-  margin-top: 0.65rem;
-  padding: 0;
-  max-width: 62ch;
-}
-
-.hero-bio p { margin: 0.5em 0; }
-.hero-bio p:first-child { margin-top: 0; }
-.hero-bio ul { margin: 0.4em 0; padding-left: 1.2em; }
-.hero-bio li { margin: 0.15em 0; }
+.sidebar-social a { color: var(--text-soft); }
+.sidebar-social a:hover { color: var(--accent); text-decoration: none; }
 
 /* ---------------- Sections ---------------- */
 
-.site-main {
-  max-width: 880px;
-  margin: 0 auto;
-  padding: 0 1.5rem;
-}
+.site-main { padding: 2rem 0 0; }
 
 .section {
-  padding: 1rem 0 1.5rem;
-  border-top: 1px solid var(--border);
+  padding: 0 0 2.5rem;
 }
 
 .section h2 {
-  font-size: 1.35rem;
+  font-size: 1.5rem;
 }
+
+.section-body { padding-top: 0; }
 
 /* ---------------- Project list ---------------- */
 
@@ -260,7 +270,7 @@ h1, h2, h3 {
 /* ---------------- Single / list pages ---------------- */
 
 .page-header {
-  padding: 1rem 0 0.5rem;
+  padding: 0 0 0.5rem;
 }
 
 .page-header h1 { font-size: clamp(1.5rem, 3vw, 1.9rem); }
@@ -360,29 +370,56 @@ h1, h2, h3 {
 /* ---------------- Footer ---------------- */
 
 .site-footer {
-  max-width: 880px;
-  margin: 0 auto;
-  padding: 1rem 1.5rem 1.5rem;
+  padding: 1.5rem 0 2.5rem;
   border-top: 1px solid var(--border);
-  display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap;
-  gap: 0.75rem;
+  margin-top: 1rem;
   font-family: var(--font-mono);
   font-size: 0.72rem;
-  color: var(--text-soft);
+  color: var(--text-faint);
 }
-
-.site-footer a { color: var(--text-soft); }
-.site-footer a:hover { color: var(--text); }
 
 /* ---------------- Responsive ---------------- */
 
+@media (max-width: 860px) {
+  .page-shell {
+    flex-direction: column;
+    gap: 0;
+  }
+
+  .sidebar {
+    position: static;
+    width: 100%;
+    min-height: 0;
+    padding: 1.5rem 0 1rem;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.75rem;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .sidebar-intro { margin-bottom: 0; }
+  .sidebar-role { display: none; }
+
+  .sidebar-nav {
+    flex-direction: row;
+    gap: 1.1rem;
+    margin-bottom: 0;
+  }
+
+  .sidebar-social {
+    flex-direction: row;
+    gap: 1.1rem;
+    margin-top: 0;
+  }
+
+  .site-main { padding-top: 1.25rem; }
+}
+
 @media (max-width: 600px) {
-  .site-header { padding-top: 1rem; }
-  .site-nav { gap: 0.9rem; }
-  .hero { padding-top: 1.25rem; }
   body { font-size: 15px; }
+  .sidebar-name { font-size: 1.2rem; }
   .project-row { gap: 0.65rem; }
   .project-index { display: none; }
   .project-photo { width: 38px; height: 38px; }

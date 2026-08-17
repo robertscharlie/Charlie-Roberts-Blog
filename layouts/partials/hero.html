@@ -1,9 +1,0 @@
-<section class="hero" id="about">
-  <p class="eyebrow">About</p>
-  <h1>{{ .Site.Params.author }}</h1>
-  <p class="tagline">{{ .Site.Params.tagline }}</p>
-  {{ with site.GetPage "/about" }}
-  <div class="content-body hero-bio">{{ .Content }}</div>
-  {{ end }}
-  <a class="text-link" href="#projects">View projects <span aria-hidden="true">&rarr;</span></a>
-</section>
