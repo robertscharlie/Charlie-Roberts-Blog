@@ -1,14 +1,13 @@
 /* ---------------------------------------------------------
    Design tokens
-   Sticky-sidebar portfolio: persistent identity/nav/social
-   on the left, numbered sections scrolling on the right.
-   Soft blue-tinted background, serif display face, dense
-   rhythm — clean and minimal, not spacious.
+   Sticky-sidebar portfolio: a solid blue panel on the left
+   (identity/nav/social) against a white content column on
+   the right — two-tone instead of one flat background.
 --------------------------------------------------------- */
 :root {
-  --bg: #EAEEFA;
-  --surface: #F4F6FC;
-  --border: #D2D9EE;
+  --bg: #FFFFFF;
+  --surface: #F4F6FB;
+  --border: #E1E5F0;
   --text: #171A22;
   --text-soft: #5A5F72;
   --text-faint: #9298AC;
@@ -18,6 +17,11 @@
   --radius: 8px;
   --shell-max: 1080px;
   --sidebar-width: 250px;
+
+  --sidebar-bg-1: #3A63EC;
+  --sidebar-bg-2: #16205E;
+  --sidebar-text: #FFFFFF;
+  --sidebar-text-soft: rgba(255, 255, 255, 0.72);
 
   --font-display: "Fraunces", Georgia, serif;
   --font-sans: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
@@ -94,16 +98,16 @@ h1, h2, h3 {
 
 .page-shell {
   display: flex;
-  align-items: flex-start;
-  gap: 2.5rem;
+  align-items: stretch;
+  min-height: 100vh;
   max-width: var(--shell-max);
   margin: 0 auto;
-  padding: 0 1.5rem;
 }
 
 .content-column {
   flex: 1 1 auto;
   min-width: 0;
+  padding: 0 1.5rem 0 2.5rem;
 }
 
 /* ---------------- Sidebar ---------------- */
@@ -111,11 +115,14 @@ h1, h2, h3 {
 .sidebar {
   flex: 0 0 var(--sidebar-width);
   width: var(--sidebar-width);
+  background: linear-gradient(165deg, var(--sidebar-bg-1), var(--sidebar-bg-2));
+}
+
+.sidebar-sticky {
   position: sticky;
   top: 0;
-  align-self: flex-start;
-  padding: 2rem 0;
   min-height: 100vh;
+  padding: 2rem 1.5rem 2rem 1.5rem;
   display: flex;
   flex-direction: column;
 }
@@ -127,14 +134,14 @@ h1, h2, h3 {
   font-family: var(--font-display);
   font-weight: 600;
   font-size: 1.4rem;
-  color: var(--text);
+  color: var(--sidebar-text);
 }
 
-.sidebar-name:hover { text-decoration: none; color: var(--accent); }
+.sidebar-name:hover { text-decoration: none; color: var(--sidebar-text); opacity: 0.85; }
 
 .sidebar-role {
   margin: 0.4rem 0 0;
-  color: var(--text-soft);
+  color: var(--sidebar-text-soft);
   font-size: 0.88rem;
   max-width: 30ch;
 }
@@ -152,10 +159,10 @@ h1, h2, h3 {
   text-transform: uppercase;
   letter-spacing: 0.08em;
   font-weight: 600;
-  color: var(--text-soft);
+  color: var(--sidebar-text-soft);
 }
 
-.sidebar-nav a:hover { color: var(--accent); text-decoration: none; }
+.sidebar-nav a:hover { color: var(--sidebar-text); text-decoration: none; }
 
 .sidebar-social {
   display: flex;
@@ -166,8 +173,10 @@ h1, h2, h3 {
   font-size: 0.75rem;
 }
 
-.sidebar-social a { color: var(--text-soft); }
-.sidebar-social a:hover { color: var(--accent); text-decoration: none; }
+.sidebar-social a { color: var(--sidebar-text-soft); }
+.sidebar-social a:hover { color: var(--sidebar-text); text-decoration: none; }
+
+.sidebar a:focus-visible { outline-color: var(--sidebar-text); }
 
 /* ---------------- Sections ---------------- */
 
@@ -383,20 +392,25 @@ h1, h2, h3 {
 @media (max-width: 860px) {
   .page-shell {
     flex-direction: column;
-    gap: 0;
+    min-height: 0;
   }
 
+  .content-column { padding: 0 1.5rem; }
+
   .sidebar {
-    position: static;
     width: 100%;
+    background: linear-gradient(100deg, var(--sidebar-bg-1), var(--sidebar-bg-2));
+  }
+
+  .sidebar-sticky {
+    position: static;
     min-height: 0;
-    padding: 1.5rem 0 1rem;
+    padding: 1.25rem 1.5rem;
     flex-direction: row;
     flex-wrap: wrap;
     align-items: center;
     justify-content: space-between;
     gap: 0.75rem;
-    border-bottom: 1px solid var(--border);
   }
 
   .sidebar-intro { margin-bottom: 0; }
