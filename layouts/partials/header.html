@@ -1,0 +1,10 @@
+<header class="site-header">
+  <a class="brand" href="{{ "/" | relLangURL }}">
+    <span class="designator">TOP</span>{{ .Site.Title }}
+  </a>
+  <nav class="site-nav">
+    {{ range .Site.Menus.main }}
+    <a href="{{ .URL | relLangURL }}"{{ if $.IsMenuCurrent "main" . }} aria-current="page"{{ end }}>{{ .Name }}</a>
+    {{ end }}
+  </nav>
+</header>

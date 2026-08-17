@@ -1,0 +1,37 @@
+baseURL = "https://robertscharlie.github.io/Charlie-Roberts-Blog/"
+languageCode = "en-gb"
+title = "Charlie Roberts — Circuits & Signals"
+enableRobotsTXT = true
+
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true
+  [markup.highlight]
+    style = "monokai"
+    lineNos = false
+    noClasses = true
+
+[params]
+  description = "Circuits, signals, and side projects — an electrical engineering blog and portfolio."
+  author = "Charlie Roberts"
+  tagline = "Notes from the bench: circuits, signal chains, and the software that models them."
+
+[[menu.main]]
+  name = "Projects"
+  url = "/projects/"
+  weight = 1
+
+[[menu.main]]
+  name = "Blog"
+  url = "/blog/"
+  weight = 2
+
+[[menu.main]]
+  name = "About"
+  url = "/about/"
+  weight = 3
+
+[permalinks]
+  blog = "/blog/:slug/"
+  projects = "/projects/:slug/"

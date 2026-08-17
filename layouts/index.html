@@ -1,0 +1,30 @@
+{{ define "main" }}
+  {{ partial "hero.html" . }}
+
+  <section class="section" aria-labelledby="projects-heading">
+    <h2 id="projects-heading"><span class="designator">U1</span> Recent Projects</h2>
+    <div class="card-grid">
+      {{ range first 3 (where .Site.RegularPages "Section" "projects") }}
+      <a class="card" href="{{ .RelPermalink }}">
+        <span class="card-designator">{{ if .Params.designator }}{{ .Params.designator }}{{ else }}U{{ end }}</span>
+        <h3>{{ .Title }}</h3>
+        <p>{{ .Summary }}</p>
+      </a>
+      {{ end }}
+    </div>
+    <a class="see-all" href="{{ "/projects/" | relLangURL }}">See all projects →</a>
+  </section>
+
+  <section class="section" aria-labelledby="blog-heading">
+    <h2 id="blog-heading"><span class="designator">R1</span> Latest from the Blog</h2>
+    <div class="post-list">
+      {{ range first 3 (where .Site.RegularPages "Section" "blog") }}
+      <a class="post-row" href="{{ .RelPermalink }}">
+        <span class="post-date">{{ .Date.Format "2006-01-02" }}</span>
+        <span class="post-title">{{ .Title }}</span>
+      </a>
+      {{ end }}
+    </div>
+    <a class="see-all" href="{{ "/blog/" | relLangURL }}">See all posts →</a>
+  </section>
+{{ end }}

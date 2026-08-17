@@ -1,0 +1,42 @@
+<section class="hero">
+  <div class="hero-copy">
+    <h1>{{ .Site.Title }}</h1>
+    <p>{{ .Site.Params.tagline }}</p>
+  </div>
+
+  <svg class="hero-schematic" viewBox="0 0 800 150" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Site map drawn as a schematic trace connecting Projects, Blog, and About">
+    <!-- main bus trace -->
+    <path class="trace" d="M40,40 H760" />
+
+    <!-- drop to Projects -->
+    <path class="trace" d="M120,40 V95" />
+    <!-- drop to Blog -->
+    <path class="trace" d="M400,40 V95" />
+    <!-- drop to About -->
+    <path class="trace" d="M680,40 V95" />
+
+    <circle class="via" cx="40" cy="40" r="4" />
+    <circle class="via" cx="760" cy="40" r="4" />
+
+    <a href="{{ "/projects/" | relLangURL }}">
+      <circle class="via" cx="120" cy="40" r="4" />
+      <circle class="node-dot" cx="120" cy="100" r="5" />
+      <text class="node-label" x="120" y="126" text-anchor="middle">U1 — Projects</text>
+      <text class="node-sub" x="120" y="140" text-anchor="middle">builds &amp; simulations</text>
+    </a>
+
+    <a href="{{ "/blog/" | relLangURL }}">
+      <circle class="via" cx="400" cy="40" r="4" />
+      <circle class="node-dot" cx="400" cy="100" r="5" />
+      <text class="node-label" x="400" y="126" text-anchor="middle">R1 — Blog</text>
+      <text class="node-sub" x="400" y="140" text-anchor="middle">notes from the bench</text>
+    </a>
+
+    <a href="{{ "/about/" | relLangURL }}">
+      <circle class="via" cx="680" cy="40" r="4" />
+      <circle class="node-dot" cx="680" cy="100" r="5" />
+      <text class="node-label" x="680" y="126" text-anchor="middle">GND — About</text>
+      <text class="node-sub" x="680" y="140" text-anchor="middle">who's behind this</text>
+    </a>
+  </svg>
+</section>

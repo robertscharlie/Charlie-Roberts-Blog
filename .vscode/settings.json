@@ -1,0 +1,15 @@
+{
+  "files.associations": {
+    "layouts/**/*.html": "gotmpl-html"
+  },
+  "markdown.extension.list.indentationSize": "adaptive",
+  "[markdown]": {
+    "editor.wordWrap": "on",
+    "editor.quickSuggestions": {
+      "comments": "off",
+      "strings": "off",
+      "other": "off"
+    }
+  },
+  "front-matter.content.wsFolder": "${workspaceFolder}"
+}
