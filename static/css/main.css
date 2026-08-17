@@ -2,7 +2,7 @@
    Design tokens
    Editorial portfolio: warm paper background, a serif display
    face for headlines, one confident accent, numbered project
-   rows instead of boxed cards.
+   rows. Dense rhythm — clean and minimal, not spacious.
 --------------------------------------------------------- */
 :root {
   --bg: #F7F5F0;
@@ -39,8 +39,8 @@ body {
   font-family: var(--font-sans);
   color: var(--text);
   background-color: var(--bg);
-  line-height: 1.55;
-  font-size: 17px;
+  line-height: 1.45;
+  font-size: 15.5px;
   -webkit-font-smoothing: antialiased;
 }
 
@@ -58,27 +58,28 @@ h1, h2, h3 {
   font-weight: 600;
   color: var(--text);
   letter-spacing: -0.01em;
-  margin: 0 0 0.4em;
+  line-height: 1.15;
+  margin: 0 0 0.3em;
 }
 
 .eyebrow {
   font-family: var(--font-mono);
-  font-size: 0.78rem;
+  font-size: 0.72rem;
   font-weight: 600;
   color: var(--accent);
   text-transform: uppercase;
-  letter-spacing: 0.12em;
-  margin: 0 0 0.5rem;
+  letter-spacing: 0.1em;
+  margin: 0 0 0.35rem;
 }
 
 .text-link {
   display: inline-flex;
   align-items: center;
-  gap: 0.4rem;
+  gap: 0.35rem;
   font-weight: 600;
-  font-size: 1.02rem;
+  font-size: 0.95rem;
   color: var(--accent);
-  margin-top: 1.5rem;
+  margin-top: 0.85rem;
 }
 
 .text-link:hover { color: var(--accent-dark); text-decoration: none; }
@@ -93,29 +94,29 @@ h1, h2, h3 {
   align-items: center;
   justify-content: space-between;
   flex-wrap: wrap;
-  gap: 1rem;
+  gap: 0.75rem;
   max-width: 880px;
   margin: 0 auto;
-  padding: 1.75rem 1.5rem 0.75rem;
+  padding: 1rem 1.5rem 0.5rem;
 }
 
 .site-header .brand {
   font-family: var(--font-display);
   font-weight: 600;
-  font-size: 1.2rem;
+  font-size: 1.05rem;
   color: var(--text);
 }
 
 .site-nav {
   display: flex;
-  gap: 1.75rem;
+  gap: 1.25rem;
 }
 
 .site-nav a {
   font-family: var(--font-mono);
-  font-size: 0.75rem;
+  font-size: 0.7rem;
   text-transform: uppercase;
-  letter-spacing: 0.1em;
+  letter-spacing: 0.08em;
   font-weight: 600;
   color: var(--text-soft);
 }
@@ -128,29 +129,32 @@ h1, h2, h3 {
 .hero {
   max-width: 880px;
   margin: 0 auto;
-  padding: 2.5rem 1.5rem 2rem;
+  padding: 1.25rem 1.5rem 1rem;
 }
 
 .hero h1 {
-  font-size: clamp(2.4rem, 6vw, 3.6rem);
-  max-width: 14ch;
+  font-size: clamp(1.7rem, 3.6vw, 2.1rem);
+  max-width: 18ch;
 }
 
 .hero p.tagline {
   font-family: var(--font-sans);
   color: var(--text-soft);
-  max-width: 52ch;
-  font-size: 1.1rem;
-  margin: 0.75rem 0 0;
+  max-width: 56ch;
+  font-size: 0.98rem;
+  margin: 0.35rem 0 0;
 }
 
 .hero-bio {
-  margin-top: 1.25rem;
+  margin-top: 0.65rem;
   padding: 0;
-  max-width: 60ch;
+  max-width: 62ch;
 }
 
+.hero-bio p { margin: 0.5em 0; }
 .hero-bio p:first-child { margin-top: 0; }
+.hero-bio ul { margin: 0.4em 0; padding-left: 1.2em; }
+.hero-bio li { margin: 0.15em 0; }
 
 /* ---------------- Sections ---------------- */
 
@@ -161,47 +165,47 @@ h1, h2, h3 {
 }
 
 .section {
-  padding: 2.5rem 0 3rem;
+  padding: 1rem 0 1.5rem;
   border-top: 1px solid var(--border);
 }
 
 .section h2 {
-  font-size: 1.9rem;
+  font-size: 1.35rem;
 }
 
 /* ---------------- Project list ---------------- */
 
 .project-list {
-  margin-top: 1.5rem;
+  margin-top: 0.5rem;
   border-top: 1px solid var(--border);
 }
 
 .project-row {
   display: flex;
   align-items: center;
-  gap: 1.25rem;
-  padding: 1.4rem 0;
+  gap: 0.9rem;
+  padding: 0.75rem 0;
   border-bottom: 1px solid var(--border);
   color: var(--text);
-  transition: padding-left 0.18s ease;
+  transition: padding-left 0.15s ease;
 }
 
-.project-row:hover { text-decoration: none; padding-left: 0.4rem; }
+.project-row:hover { text-decoration: none; padding-left: 0.35rem; }
 .project-row:hover .project-info h3 { color: var(--accent); }
 .project-row:hover .project-arrow { color: var(--accent); transform: translateX(4px); }
 
 .project-index {
   font-family: var(--font-mono);
-  font-size: 0.8rem;
+  font-size: 0.75rem;
   color: var(--text-faint);
-  width: 2.2ch;
+  width: 2ch;
   flex-shrink: 0;
 }
 
 .project-photo {
   flex: 0 0 auto;
-  width: 64px;
-  height: 64px;
+  width: 44px;
+  height: 44px;
   border-radius: var(--radius);
   overflow: hidden;
   background: var(--surface);
@@ -220,15 +224,15 @@ h1, h2, h3 {
 
 .project-photo-label {
   font-family: var(--font-display);
-  font-size: 1.4rem;
+  font-size: 1.05rem;
   color: var(--text-faint);
 }
 
 .project-info { flex: 1 1 auto; min-width: 0; }
 
 .project-info h3 {
-  font-size: 1.35rem;
-  margin-bottom: 0.2rem;
+  font-size: 1.05rem;
+  margin-bottom: 0.1rem;
   transition: color 0.15s ease;
 }
 
@@ -236,12 +240,18 @@ h1, h2, h3 {
   margin: 0;
   color: var(--text-soft);
   font-family: var(--font-sans);
-  font-size: 0.98rem;
-  max-width: 60ch;
+  font-size: 0.88rem;
+  max-width: 62ch;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  line-clamp: 1;
+  -webkit-box-orient: vertical;
 }
 
 .project-arrow {
-  font-size: 1.4rem;
+  font-size: 1.2rem;
   color: var(--text-faint);
   flex-shrink: 0;
   transition: color 0.15s ease, transform 0.15s ease;
@@ -250,38 +260,38 @@ h1, h2, h3 {
 /* ---------------- Single / list pages ---------------- */
 
 .page-header {
-  padding: 2rem 0 0.75rem;
+  padding: 1rem 0 0.5rem;
 }
 
-.page-header h1 { font-size: clamp(1.9rem, 4vw, 2.6rem); }
+.page-header h1 { font-size: clamp(1.5rem, 3vw, 1.9rem); }
 
 .page-meta {
   font-family: var(--font-mono);
-  font-size: 0.8rem;
+  font-size: 0.75rem;
   color: var(--text-soft);
   display: flex;
-  gap: 0.75rem;
+  gap: 0.6rem;
   flex-wrap: wrap;
   align-items: center;
 }
 
 .tag {
   font-family: var(--font-mono);
-  font-size: 0.7rem;
+  font-size: 0.66rem;
   text-transform: uppercase;
   letter-spacing: 0.05em;
   color: var(--accent-dark);
   background: var(--accent-tint);
   border: 1px solid rgba(47, 93, 227, 0.25);
   border-radius: 4px;
-  padding: 0.2em 0.5em;
+  padding: 0.15em 0.45em;
 }
 
 .single-photo {
-  width: 240px;
+  width: 160px;
   aspect-ratio: 4 / 3;
   border-radius: var(--radius);
-  margin-top: 1rem;
+  margin-top: 0.65rem;
   overflow: hidden;
   display: flex;
   align-items: center;
@@ -300,28 +310,30 @@ h1, h2, h3 {
 
 .single-photo-label {
   font-family: var(--font-mono);
-  font-size: 0.8rem;
+  font-size: 0.7rem;
   color: var(--text-faint);
-  padding: 0 1rem;
+  padding: 0 0.75rem;
 }
 
 .content-body {
-  padding: 0.75rem 0 2rem;
+  padding: 0.4rem 0 1rem;
   max-width: 68ch;
 }
 
-.content-body h2 { margin-top: 2rem; font-size: 1.3rem; }
-.content-body h3 { margin-top: 1.5rem; font-size: 1.1rem; }
-.content-body p { margin: 1em 0; font-family: var(--font-sans); }
+.content-body h2 { margin-top: 1.1rem; font-size: 1.15rem; }
+.content-body h3 { margin-top: 0.9rem; font-size: 1.02rem; }
+.content-body p { margin: 0.65em 0; font-family: var(--font-sans); }
+.content-body ul, .content-body ol { margin: 0.5em 0; padding-left: 1.3em; }
+.content-body li { margin: 0.15em 0; }
 
 .content-body pre {
   background: #1C1A16;
   color: #F2EFE9;
-  padding: 1rem 1.1rem;
+  padding: 0.75rem 0.9rem;
   border-radius: var(--radius);
   overflow-x: auto;
   font-family: var(--font-mono);
-  font-size: 0.88rem;
+  font-size: 0.85rem;
 }
 
 .content-body code {
@@ -335,29 +347,29 @@ h1, h2, h3 {
 .content-body pre code { background: none; padding: 0; }
 
 .content-body blockquote {
-  margin: 1.5em 0;
-  padding: 0.2em 1.2em;
+  margin: 0.75em 0;
+  padding: 0.1em 1rem;
   border-left: 2px solid var(--accent);
   color: var(--text-soft);
 }
 
 .content-body img { max-width: 100%; border-radius: var(--radius); }
 
-.list-page .project-list { margin-top: 1rem; }
+.list-page .project-list { margin-top: 0.35rem; }
 
 /* ---------------- Footer ---------------- */
 
 .site-footer {
   max-width: 880px;
   margin: 0 auto;
-  padding: 1.75rem 1.5rem 2.5rem;
+  padding: 1rem 1.5rem 1.5rem;
   border-top: 1px solid var(--border);
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
-  gap: 1rem;
+  gap: 0.75rem;
   font-family: var(--font-mono);
-  font-size: 0.78rem;
+  font-size: 0.72rem;
   color: var(--text-soft);
 }
 
@@ -367,14 +379,14 @@ h1, h2, h3 {
 /* ---------------- Responsive ---------------- */
 
 @media (max-width: 600px) {
-  .site-header { padding-top: 1.5rem; }
-  .site-nav { gap: 1.1rem; }
-  .hero { padding-top: 2rem; }
-  body { font-size: 16px; }
-  .project-row { gap: 0.85rem; }
+  .site-header { padding-top: 1rem; }
+  .site-nav { gap: 0.9rem; }
+  .hero { padding-top: 1.25rem; }
+  body { font-size: 15px; }
+  .project-row { gap: 0.65rem; }
   .project-index { display: none; }
-  .project-photo { width: 48px; height: 48px; }
-  .project-photo-label { font-size: 1.1rem; }
-  .project-info h3 { font-size: 1.15rem; }
-  .single-photo { width: 160px; }
+  .project-photo { width: 38px; height: 38px; }
+  .project-photo-label { font-size: 0.9rem; }
+  .project-info h3 { font-size: 0.98rem; }
+  .single-photo { width: 120px; }
 }
