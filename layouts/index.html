@@ -12,7 +12,7 @@
       </a>
       {{ end }}
     </div>
-    <a class="see-all" href="{{ "/projects/" | relLangURL }}">See all projects →</a>
+    <a class="see-all" href="{{ (site.GetPage "/projects").RelPermalink }}">See all projects →</a>
   </section>
 
   <section class="section" aria-labelledby="blog-heading">
@@ -25,6 +25,6 @@
       </a>
       {{ end }}
     </div>
-    <a class="see-all" href="{{ "/blog/" | relLangURL }}">See all posts →</a>
+    <a class="see-all" href="{{ (site.GetPage "/blog").RelPermalink }}">See all posts →</a>
   </section>
 {{ end }}

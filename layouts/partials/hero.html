@@ -18,21 +18,21 @@
     <circle class="via" cx="40" cy="40" r="4" />
     <circle class="via" cx="760" cy="40" r="4" />
 
-    <a href="{{ "/projects/" | relLangURL }}">
+    <a href="{{ (site.GetPage "/projects").RelPermalink }}">
       <circle class="via" cx="120" cy="40" r="4" />
       <circle class="node-dot" cx="120" cy="100" r="5" />
       <text class="node-label" x="120" y="126" text-anchor="middle">U1 — Projects</text>
       <text class="node-sub" x="120" y="140" text-anchor="middle">builds &amp; simulations</text>
     </a>
 
-    <a href="{{ "/blog/" | relLangURL }}">
+    <a href="{{ (site.GetPage "/blog").RelPermalink }}">
       <circle class="via" cx="400" cy="40" r="4" />
       <circle class="node-dot" cx="400" cy="100" r="5" />
       <text class="node-label" x="400" y="126" text-anchor="middle">R1 — Blog</text>
       <text class="node-sub" x="400" y="140" text-anchor="middle">notes from the bench</text>
     </a>
 
-    <a href="{{ "/about/" | relLangURL }}">
+    <a href="{{ (site.GetPage "/about").RelPermalink }}">
       <circle class="via" cx="680" cy="40" r="4" />
       <circle class="node-dot" cx="680" cy="100" r="5" />
       <text class="node-label" x="680" y="126" text-anchor="middle">GND — About</text>
