@@ -1,3 +1,11 @@
 <footer class="site-footer">
-  <span>© {{ now.Format "2006" }} {{ .Site.Params.author }}</span>
+  <div class="shell footer-inner">
+    <span>© {{ now.Format "2006" }} {{ .Site.Params.author }}</span>
+    <div class="footer-social">
+      <a href="{{ "cv.pdf" | relURL }}" target="_blank" rel="noopener">CV</a>
+      <a href="https://github.com/robertscharlie">GitHub</a>
+      <a href="https://www.linkedin.com/in/robertscjf">LinkedIn</a>
+      <a href="mailto:charliejfroberts@gmail.com">Email</a>
+    </div>
+  </div>
 </footer>

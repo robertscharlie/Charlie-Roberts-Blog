@@ -2,4 +2,4 @@
 title: "Projects"
 ---
 
-Software tools built to model circuits, signals, and systems.
+Games, web apps, and electronics — software and hardware projects built end to end.

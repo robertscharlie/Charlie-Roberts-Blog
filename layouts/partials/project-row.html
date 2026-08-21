@@ -1,16 +1,26 @@
 {{ $p := .page }}
-<a class="project-row" href="{{ $p.RelPermalink }}">
-  <span class="project-index">{{ printf "%02d" .index }}</span>
-  <div class="project-photo">
+<div class="project-card">
+  <a class="project-card-thumb" href="{{ $p.RelPermalink }}">
     {{ if $p.Params.image }}
     <img src="{{ $p.Params.image | relURL }}" alt="{{ $p.Title }}" loading="lazy">
     {{ else }}
     <span class="project-photo-label">{{ substr $p.Title 0 1 }}</span>
     {{ end }}
+  </a>
+  <div class="project-card-body">
+    <h3><a href="{{ $p.RelPermalink }}">{{ $p.Title }}</a></h3>
+    <p class="project-card-desc">{{ $p.Summary }}</p>
+    {{ with $p.Params.highlights }}
+    <ul class="project-card-highlights">
+      {{ range . }}<li>{{ . }}</li>{{ end }}
+    </ul>
+    {{ end }}
+    <div class="project-card-meta">
+      {{ with $p.Params.link }}
+      <a class="project-card-link" href="{{ if hasPrefix . "http" }}{{ . }}{{ else }}{{ . | relURL }}{{ end }}" target="_blank" rel="noopener">{{ $p.Params.linkLabel | default "Link" }} &#8599;</a>
+      {{ end }}
+      {{ with $p.Params.category }}<span class="tag category-tag">{{ . }}</span>{{ end }}
+      {{ if not $p.Date.IsZero }}<span class="year-badge">{{ $p.Date.Format "2006" }}</span>{{ end }}
+    </div>
   </div>
-  <div class="project-info">
-    <h3>{{ $p.Title }}</h3>
-    <p>{{ $p.Summary }}</p>
-  </div>
-  <span class="project-arrow" aria-hidden="true">&rarr;</span>
-</a>
+</div>
