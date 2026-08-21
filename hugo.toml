@@ -1,5 +1,5 @@
 baseURL = "https://robertscharlie.github.io/Charlie-Roberts-Blog/"
-languageCode = "en-gb"
+locale = "en-gb"
 title = "Charlie Roberts"
 enableRobotsTXT = true
 
@@ -13,9 +13,11 @@ enableRobotsTXT = true
     noClasses = true
 
 [params]
-  description = "Side projects from an electrical engineering student — games, web apps, and the odd circuit."
+  description = "MEng Electrical and Electronics Engineering student at Imperial College London — circuits, software, and side projects."
   author = "Charlie Roberts"
-  tagline = "Side projects, from an electrical engineering student who also writes software."
+  location = "London, United Kingdom"
+  # Add a photo to static/images/, then put its path here, e.g. "images/profile.jpg"
+  profilePicture = ""
 
 [permalinks]
   projects = "/projects/:slug/"
