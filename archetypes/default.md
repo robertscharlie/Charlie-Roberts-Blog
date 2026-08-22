@@ -5,6 +5,9 @@ draft: true
 summary: ""
 tags: []
 image: ""
+category: ""
 math: false
+highlights:
+  - ""
 ---
 
