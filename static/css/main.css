@@ -69,21 +69,6 @@ h1, h2, h3 {
   margin: 0 0 0.35rem;
 }
 
-.text-link {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.35rem;
-  font-weight: 600;
-  font-size: 0.95rem;
-  color: var(--accent);
-  margin-top: 0.85rem;
-}
-
-.text-link:hover { color: var(--accent-dark); text-decoration: none; }
-
-.text-link span { display: inline-block; transition: transform 0.15s ease; }
-.text-link:hover span { transform: translateX(4px); }
-
 /* ---------------- Shell ---------------- */
 
 .shell {
@@ -211,8 +196,6 @@ h1, h2, h3 {
 .section h2 {
   font-size: 1.4rem;
 }
-
-.section-body { padding-top: 0; }
 
 .page-content {
   padding: 2rem 0 0;

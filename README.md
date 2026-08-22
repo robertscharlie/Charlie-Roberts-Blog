@@ -1,99 +1,79 @@
-# Project portfolio (Hugo)
+# My portfolio
 
-A static site scaffold for a project portfolio, built with [Hugo](https://gohugo.io). Deploys for free on GitHub Pages, with room for a custom domain.
+My personal site, built with [Hugo](https://gohugo.io). Lives at [robertscharlie.github.io/Charlie-Roberts-Blog](https://robertscharlie.github.io/Charlie-Roberts-Blog/).
 
-Design: clean and minimal — light surface, a single accent colour, strong type hierarchy, and large single-column project cards with generous whitespace.
+## Running it locally
 
-## 1. Install Hugo locally
-
-You need the **extended** version (for the built-in SCSS/asset pipeline support).
+Needs the **extended** version of Hugo:
 
 - macOS: `brew install hugo`
-- Windows: `choco install hugo-extended` or `winget install Hugo.Hugo.Extended`
-- Linux: see the [Hugo install docs](https://gohugo.io/installation/linux/) — or download the `_extended_` `.deb`/`.rpm`/`.tar.gz` from the [releases page](https://github.com/gohugoio/hugo/releases)
+- Windows: `winget install Hugo.Hugo.Extended`
+- Linux: see the [install docs](https://gohugo.io/installation/linux/)
 
-Check it worked:
-
-```
-hugo version
-```
-
-## 2. Run it locally
-
-From this folder:
+Then from this folder:
 
 ```
 hugo server -D
 ```
 
-Open the URL it prints (usually `http://localhost:1313`). `-D` includes draft posts (front matter `draft: true`) so you can preview unpublished work. Leave it running — it live-reloads as you edit.
+Open the URL it prints (usually `http://localhost:1313`), and it live-reloads as I edit. `-D` includes drafts.
 
-## 3. Add content
+In VS Code, `Ctrl+Shift+B` (`Cmd+Shift+B` on Mac) runs the same thing as the default build task, and there's a "Hugo: New project" task for the command below.
 
-New project:
+## Adding a project
 
 ```
-hugo new projects/my-project.md
+hugo new projects/my-new-project.md
 ```
 
-This uses `archetypes/default.md`. Fill in the front matter at the top of the new file:
+Fill in the front matter, write the body, set `draft: false`, then push. It goes live on its own.
 
 ```yaml
 ---
-title: "My Project Title"
-date: 2026-08-17
-draft: false          # set false to publish
+title: "My Project"
+date: 2026-08-22
+draft: false
 summary: "One sentence for the card preview."
-tags: ["circuits"]
-image: "images/projects/my-project.jpg"   # optional; leave "" for a placeholder slot
-math: false            # set true to load MathJax on this page
+tags: ["electronics"]
+image: "images/projects/my-project/cover.jpg"   # optional, leave blank for a placeholder slot
+category: "Electronics"
+highlights:
+  - "First bullet for the card"
+math: false
 ---
 ```
 
-Put image files under `static/images/projects/` — the path in `image` is relative to `static/`. Leave `image` blank and the card/project page shows a placeholder slot instead, so entries stay visually consistent until you add a photo.
+Images live under `static/images/projects/<project-name>/`.
 
-## 4. Put it on GitHub
+## Deploying
 
-```
-git init
-git add .
-git commit -m "Initial site"
-git branch -M main
-git remote add origin https://github.com/yourusername/yourrepo.git
-git push -u origin main
-```
+Pushing to `main` triggers `.github/workflows/hugo.yml`, which builds with Hugo and deploys straight to GitHub Pages. No manual step. If a build ever goes red, check the Actions tab.
 
-Then in the repo on GitHub: **Settings → Pages → Build and deployment → Source → GitHub Actions**. The included workflow (`.github/workflows/hugo.yml`) builds the site with Hugo and deploys it automatically on every push to `main`.
+## Profile picture
 
-## 5. Add your custom domain
+The hero shows a placeholder circle until there's a real photo. To set one: drop it in `static/images/`, then set `profilePicture = "images/whatever.jpg"` under `[params]` in `hugo.toml`.
 
-1. Edit `static/CNAME` and replace `yourdomain.com` with your actual domain (just the bare domain, no `https://`).
-2. In your domain registrar's DNS settings:
-   - **Apex domain** (`yourdomain.com`): add four `A` records pointing at GitHub Pages' IPs:
-     ```
-     185.199.108.153
-     185.199.109.153
-     185.199.110.153
-     185.199.111.153
-     ```
-   - **Subdomain** (`www.yourdomain.com` or `blog.yourdomain.com`): add a `CNAME` record pointing to `yourusername.github.io`.
-   - If you're using Cloudflare as your registrar/DNS, set those records to "DNS only" (grey cloud) at first — you can turn proxying back on once Pages confirms the domain.
-3. Back in **Settings → Pages**, enter the domain under "Custom domain" and save. Once DNS propagates (minutes to a few hours), tick **Enforce HTTPS** — GitHub provisions a free SSL certificate automatically.
-4. Update `baseURL` in `hugo.toml` to your real domain, e.g. `baseURL = "https://yourdomain.com/"`.
+## CV
+
+The footer's CV link only shows up once `static/cv.pdf` actually exists. Drop a PDF there and it appears automatically.
+
+## Custom domain (not set up yet)
+
+If I buy one later:
+
+1. Add a `static/CNAME` file containing the bare domain (no `https://`)
+2. DNS at the registrar: four `A` records to GitHub Pages' IPs (`185.199.108.153`, `.109.153`, `.110.153`, `.111.153`) for the apex domain, or a `CNAME` record to `robertscharlie.github.io` for a subdomain
+3. Settings → Pages → enter the domain, wait for it to verify, tick "Enforce HTTPS"
+4. Update `baseURL` in `hugo.toml` to match
 
 ## Structure
 
 ```
-content/
-  projects/      # portfolio projects
-  about.md
-layouts/         # HTML templates (Go templates)
-static/css/      # stylesheet, CNAME
-.github/workflows/hugo.yml   # build + deploy on push
+content/projects/    each project is one .md file
+content/about.md     the bio shown in the hero
+layouts/              Go templates
+static/css/main.css  the whole stylesheet (colours and fonts are CSS variables at the top)
+static/images/        project photos
+static/files/         PDFs linked from project pages
+.github/workflows/    build + deploy
 ```
-
-## Customising
-
-- Colours, type, and spacing are all CSS custom properties at the top of `static/css/main.css` — change the palette there and it cascades everywhere.
-- Site title, tagline, nav, and description live in `hugo.toml`.
-- The hero (`layouts/partials/hero.html`) is just a heading, tagline, and two buttons — easy to extend.

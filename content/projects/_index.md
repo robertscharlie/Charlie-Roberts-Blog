@@ -2,4 +2,4 @@
 title: "Projects"
 ---
 
-Games, web apps, and electronics — software and hardware projects built end to end.
+Games, web apps, and electronics I've built end to end.
