@@ -1,4 +1,4 @@
-# Charlie Roberts — portfolio
+# My portfolio
 
 My personal site, built with [Hugo](https://gohugo.io). Lives at [robertscharlie.github.io/Charlie-Roberts-Blog](https://robertscharlie.github.io/Charlie-Roberts-Blog/).
 
@@ -16,7 +16,7 @@ Then from this folder:
 hugo server -D
 ```
 
-Open the URL it prints (usually `http://localhost:1313`) — it live-reloads as I edit. `-D` includes drafts.
+Open the URL it prints (usually `http://localhost:1313`), and it live-reloads as I edit. `-D` includes drafts.
 
 In VS Code, `Ctrl+Shift+B` (`Cmd+Shift+B` on Mac) runs the same thing as the default build task, and there's a "Hugo: New project" task for the command below.
 
@@ -26,7 +26,7 @@ In VS Code, `Ctrl+Shift+B` (`Cmd+Shift+B` on Mac) runs the same thing as the def
 hugo new projects/my-new-project.md
 ```
 
-Fill in the front matter, write the body, set `draft: false`, then push — it goes live on its own.
+Fill in the front matter, write the body, set `draft: false`, then push. It goes live on its own.
 
 ```yaml
 ---
@@ -35,7 +35,7 @@ date: 2026-08-22
 draft: false
 summary: "One sentence for the card preview."
 tags: ["electronics"]
-image: "images/projects/my-project/cover.jpg"   # optional — leave blank for a placeholder slot
+image: "images/projects/my-project/cover.jpg"   # optional, leave blank for a placeholder slot
 category: "Electronics"
 highlights:
   - "First bullet for the card"
@@ -47,7 +47,7 @@ Images live under `static/images/projects/<project-name>/`.
 
 ## Deploying
 
-Pushing to `main` triggers `.github/workflows/hugo.yml`, which builds with Hugo and deploys straight to GitHub Pages. No manual step — if a build ever goes red, check the Actions tab.
+Pushing to `main` triggers `.github/workflows/hugo.yml`, which builds with Hugo and deploys straight to GitHub Pages. No manual step. If a build ever goes red, check the Actions tab.
 
 ## Profile picture
 
@@ -55,7 +55,7 @@ The hero shows a placeholder circle until there's a real photo. To set one: drop
 
 ## CV
 
-The footer's CV link only shows up once `static/cv.pdf` actually exists — drop a PDF there and it appears automatically.
+The footer's CV link only shows up once `static/cv.pdf` actually exists. Drop a PDF there and it appears automatically.
 
 ## Custom domain (not set up yet)
 
@@ -72,7 +72,7 @@ If I buy one later:
 content/projects/    each project is one .md file
 content/about.md     the bio shown in the hero
 layouts/              Go templates
-static/css/main.css  the whole stylesheet — colours and fonts are CSS variables at the top
+static/css/main.css  the whole stylesheet (colours and fonts are CSS variables at the top)
 static/images/        project photos
 static/files/         PDFs linked from project pages
 .github/workflows/    build + deploy
