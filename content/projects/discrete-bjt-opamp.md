@@ -26,6 +26,10 @@ An op-amp has to amplify the difference between two inputs while ignoring anythi
 
 Building it stage by stage and getting each one working before adding the next is how the theory actually clicked. Reading about a current mirror is one thing; watching it hold a tail current steady on a simulated trace is another.
 
+![Full LTSpice schematic: seventeen transistors (Q1-Q17) split between 2N2907 PNPs and 2N2222 NPNs, running off a split ±5V supply](../../images/projects/discrete-bjt-opamp/full-schematic.png)
+
+The finished circuit runs to seventeen transistors: 2N2907 PNPs for the input differential pair and the upper current mirrors, 2N2222 NPNs for the tail source and the Darlington output. It's biased off a split ±5V supply rather than a single rail, which is what lets the output swing through 0V like a real op-amp instead of sitting offset. R1 and R3 (8.6kΩ and 9.3kΩ) set the mirror currents that establish the open-loop gain, a 1nF cap across the second stage keeps it from oscillating once the feedback loop closes, and a pair of 12Ω resistors on the output stage limit the current the Darlington pair can dump into a short.
+
 ## Checking the gain
 
 To prove the finished amplifier actually behaved like an op-amp, rather than just a pile of transistors that happened to simulate, I built a simple test bench: the amplifier wired as an inverting stage, input resistor fixed at 1kΩ, and the feedback resistor stepped through 1k, 10k, 100k, and 1M across the same AC sweep.

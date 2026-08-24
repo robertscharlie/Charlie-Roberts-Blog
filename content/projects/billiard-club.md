@@ -26,6 +26,14 @@ Around that sits a full menu system: main menu, mode select, a "Customise Game" 
 
 ![Mid-game, showing the aim line, shot power slider, turn indicator, and per-player ball tracker along the bottom](../../images/projects/billiard-club/gameplay-break.png)
 
+The bank-shot aim assist is the one bit of the physics engine that runs before the cue ball ever moves: it projects the cue ball's path forward and, if that path would hit a cushion first, bends the line at the rail to show where it reflects, rather than just pointing straight at the target.
+
+![Aim-assist line bending off the top cushion mid-shot, four balls already potted and marked with a cross in the tracker along the bottom](../../images/projects/billiard-club/bank-shot-aim.png)
+
+Pausing (Esc) drops a blurred, dimmed version of the table behind a simple two-button overlay, so the board state is still visible underneath without being distracting.
+
+![Pause menu: the table blurred out behind the game logo, with "Game Paused" and "Exit Game" buttons](../../images/projects/billiard-club/pause-menu.png)
+
 I built it in stages, testing after each one: physics and collisions first, then the table and UI, then cue mechanics, rules, AI, menus, audio, and a final polish pass. The trickiest parts got prototyped in isolation first: a standalone `ballPhysics.py` for collisions and restitution, and a `sliders.py` for the shot-power UI, before merging both into `main.py`.
 
 ![End-of-game screen showing the win message, final ball positions, and the potted/remaining ball tracker for each player](../../images/projects/billiard-club/win-screen.png)

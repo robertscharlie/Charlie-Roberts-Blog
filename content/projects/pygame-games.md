@@ -25,6 +25,8 @@ Balls launch 200ms apart so a volley reads as a stream rather than a clump, each
 
 ![Ballz mid-volley, an in-progress run, captured straight from the actual game code](../../images/projects/pygame-games/ballz-inplay.png)
 
+![Ballz game over, a block has crossed the bottom of the play area, ending the run](../../images/projects/pygame-games/ballz-gameover.png)
+
 **Tetris:** a classic falling-block puzzle built from scratch, with piece rotation and full-row clearing. Arrows shift and drop the piece, up rotates it, and clearing rows scores points.
 
 ![Tetris gameplay, a partial board with the score shown in the side panel](../../images/projects/pygame-games/tetris.png)
@@ -32,6 +34,8 @@ Balls launch 200ms apart so a volley reads as a stream rather than a clump, each
 There's no piece/entity system: the board is a 2D grid of single-character cell states, and falling, locking, and clearing all shift values directly around that grid. Each piece is a 3×3 grid of the same characters, which makes rotation almost free, just transposing and reversing the slice. Fall speed is time-based rather than frame-based, so it stays consistent regardless of frame rate.
 
 ![Tetris mid-game, a rotated piece falling above a locked row, captured from the actual game code](../../images/projects/pygame-games/tetris-inplay.png)
+
+![Tetris game over, the stack has filled up to the top of the board and no new piece can spawn](../../images/projects/pygame-games/tetris-gameover.png)
 
 **Stack:** Python, Pygame
 

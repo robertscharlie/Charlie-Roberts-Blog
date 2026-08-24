@@ -20,9 +20,9 @@ A 24-hour digital alarm clock, designed and built from scratch for a real client
 
 **Research:** client interviews, a group questionnaire, a mood board, and anthropometric sizing for the buttons and case. I also tore down a few commercial products for ideas: a Dyson vacuum's bold two-tone colour and no-exposed-parts design ethos, a cheap analogue clock's night light and alarm, and Fitbit's legible interfaces. That fed a red-and-black two-tone scheme, filleted edges for grip, and a fully enclosed case.
 
-**Timekeeping:** rather than trust the microcontroller's own clock, a 32kHz crystal oscillator feeds a 4060B ripple counter to divide down to an exact 1Hz pulse. A Genie microcontroller counts those pulses to track time, drives four seven-segment displays through 4026B decade counters, and stores the time and alarm in EEPROM so both survive a power cut.
+**Timekeeping:** rather than trust the microcontroller's own clock, a 32.768kHz crystal (X2) feeds a 4060B ripple counter (IC6) to divide down to an exact 1Hz pulse. A Genie 20 microcontroller (IC7) counts those pulses to track time, drives all four seven-segment displays through four 4026B decade counters (IC1-IC4), and stores the time and alarm in EEPROM so both survive a power cut. Six buttons feed the Genie directly: clock set, alarm set, increment, 12/24hr switch, confirm/stop alarm, and reset, alongside the volume pot (VR1) and buzzer (BZ1) on the alarm output.
 
-![Schematic of the two 4026B decade counters driving a pair of seven-segment displays off a 1Hz clock pulse](../../images/projects/digital-alarm-clock/timekeeping-schematic.png)
+![Full timekeeping schematic: the 32.768kHz crystal and 4060B divider feeding a Genie 20 microcontroller, which drives four 4026B-controlled seven-segment digits and reads six front-panel buttons](../../images/projects/digital-alarm-clock/timekeeping-schematic.png)
 
 **Electronics:** three iterations. First, a 555 timer flashing an LED once a second, nowhere near accurate enough. Second, the Genie and seven-segment displays, but the time lived in main memory and was lost on every power cut. Third fixed both: the crystal-and-4060B timebase for accuracy, EEPROM for persistence, a distinct alarm-setting mode, and a battery/mains toggle.
 
@@ -41,6 +41,8 @@ Partway through assembly, the seven-segment displays turned out to need more cur
 ![Seven-segment displays and PCB wiring mid-assembly, before the case was closed up](../../images/projects/digital-alarm-clock/assembly.jpg)
 
 **Case:** a 3D-printed PLA base (CAD'd in Autodesk Inventor, filleted edges for grip) with laser-cut acrylic front and back faces, sprayed with UV-resistant paint. Both faces are removable for battery access and debugging.
+
+![CAD drawing of the case base: front, side, and top orthographic views plus an isometric, 190×90×90mm with filleted edges](../../images/projects/digital-alarm-clock/casing.png)
 
 ![Rear face of the clock, showing the seven buttons, volume dial, power switch, and DC input](../../images/projects/digital-alarm-clock/back-face.jpg)
 
