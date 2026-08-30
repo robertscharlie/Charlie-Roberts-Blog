@@ -2,6 +2,10 @@
 title: "About"
 ---
 
-I'm Charlie Roberts, a first-year MEng Electrical and Electronics Engineering student at Imperial College London, and a **UKESF** Semiconductor Talent Award Scholar. Alongside coursework in circuits, digital electronics, and computer architecture, I build software and hardware projects on the side: web apps in **Django**, games in **Pygame**, and electronics built around microcontrollers, PCBs, and 3D-printed enclosures.
+I'm Charlie Roberts, a second-year MEng Electrical and Electronics Engineering student at Imperial College London.
 
-This site is where those projects live.
+Proud to be a UKESF Semiconductor Talent Award Scholar, 1 of 300 in my year receiving monthly mentoring sessions and access to attend various semiconductor events and conferences.
+
+Alongside my studies, I build electronic and software projects for fun on the side. I've done projects for personal and potential medical use, with some projects including custom PCBs and 3D-printed enclosures for my embedded electronics, all listed on this site.
+
+I have worked in lots of projects and I am familiar with the following software/tools: Python, C++, Arduino, Raspberry Pi, HTML/CSS/JavaScript, SQL, Autodesk Inventor, LTspice.

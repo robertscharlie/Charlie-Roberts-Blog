@@ -12,14 +12,13 @@ linkLabel: "Repo"
 highlights:
   - "Ballz: an aim-and-fire brick-breaker with combo scoring and coin pickups"
   - "Tetris: full piece rotation and row-clearing, built entirely from scratch"
-  - "Each one was a way to practise a different concept: sprite groups, collisions, grid logic"
 ---
 
 A small collection of games built with Pygame while learning Python and game development. Each one was a way to practise a different concept: sprite groups, collision detection, grid logic, and simple physics.
 
 **Ballz:** a brick-breaker inspired by the mobile game *Ballz*. Click to aim and fire a stream of balls at descending numbered blocks; each hit knocks a block down, destroying it at zero. Catch a coin mid-flight for an extra ball next volley. Let a block reach the bottom and it's game over.
 
-![Ballz gameplay, a wave of numbered blocks descending toward the launcher](../../images/projects/pygame-games/ballz.png)
+![Ballz gameplay, a wave of numbered blocks descending towards the launcher](../../images/projects/pygame-games/ballz.png)
 
 Balls launch 200ms apart so a volley reads as a stream rather than a clump, each tracking its own position as a float for sub-pixel precision. Volley speed scales with score, and each new volley launches from wherever the last ball came to rest rather than resetting to centre, so aim carries over between shots.
 

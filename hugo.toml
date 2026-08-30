@@ -1,4 +1,4 @@
-baseURL = "https://robertscharlie.github.io/Charlie-Roberts-Blog/"
+baseURL = "https://charliejfroberts.com/"
 locale = "en-gb"
 title = "Charlie Roberts"
 enableRobotsTXT = true
@@ -17,7 +17,7 @@ enableRobotsTXT = true
   author = "Charlie Roberts"
   location = "London, United Kingdom"
   # Add a photo to static/images/, then put its path here, e.g. "images/profile.jpg"
-  profilePicture = ""
+  profilePicture = "images/profile.jpg"
 
 [permalinks]
   projects = "/projects/:slug/"

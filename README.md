@@ -57,14 +57,17 @@ The hero shows a placeholder circle until there's a real photo. To set one: drop
 
 The footer's CV link only shows up once `static/cv.pdf` actually exists. Drop a PDF there and it appears automatically.
 
-## Custom domain (not set up yet)
+## Custom domain
 
-If I buy one later:
+Live at `charliejfroberts.com`, DNS managed on Cloudflare.
 
-1. Add a `static/CNAME` file containing the bare domain (no `https://`)
-2. DNS at the registrar: four `A` records to GitHub Pages' IPs (`185.199.108.153`, `.109.153`, `.110.153`, `.111.153`) for the apex domain, or a `CNAME` record to `robertscharlie.github.io` for a subdomain
-3. Settings → Pages → enter the domain, wait for it to verify, tick "Enforce HTTPS"
-4. Update `baseURL` in `hugo.toml` to match
+1. `static/CNAME` contains the bare domain (no `https://`) — Hugo copies it to `public/CNAME` on every build, which is what keeps GitHub's custom-domain setting from reverting on the next deploy
+2. DNS on Cloudflare, apex domain, records set to **DNS only** (grey cloud, not proxied) so GitHub can issue its own TLS cert:
+   - Four `A` records at `@` to GitHub Pages' IPs: `185.199.108.153`, `185.199.109.153`, `185.199.110.153`, `185.199.111.153`
+   - Optionally four `AAAA` records at `@` for IPv6: `2606:50c0:8000::153`, `2606:50c0:8001::153`, `2606:50c0:8002::153`, `2606:50c0:8003::153`
+   - A `CNAME` record at `www` pointing to `robertscharlie.github.io` if `www.charliejfroberts.com` should also resolve
+3. Repo Settings → Pages → Custom domain → `charliejfroberts.com` → save, wait for the DNS check to pass, then tick "Enforce HTTPS"
+4. `baseURL` in `hugo.toml` matches for local builds; the deploy workflow overrides it at build time with whatever domain is set in step 3, so that's the actual source of truth in production
 
 ## Structure
 
@@ -74,6 +77,7 @@ content/about.md     the bio shown in the hero
 layouts/              Go templates
 static/css/main.css  the whole stylesheet (colours and fonts are CSS variables at the top)
 static/images/        project photos
+static/videos/         project video clips, embedded with the {{< video >}} shortcode
 static/files/         PDFs linked from project pages
 .github/workflows/    build + deploy
 ```

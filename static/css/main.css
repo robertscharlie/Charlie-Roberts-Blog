@@ -452,6 +452,15 @@ h1, h2, h3 {
   border-radius: var(--radius);
 }
 
+.content-body video {
+  width: 100%;
+  max-width: 600px;
+  max-height: 50vh;
+  display: block;
+  margin: 0 auto;
+  border-radius: var(--radius);
+}
+
 .content-body figure {
   margin: 0.65em 0;
 }

@@ -2,7 +2,7 @@
 title: "Circuit Builder"
 date: 2026-08-14
 draft: false
-summary: "A desktop circuit editor and simulator I built myself: sketch a schematic, wire it up, and watch it actually work in DC, transient, and frequency response."
+summary: "A desktop circuit editor and simulator where users can sketch a schematic, wire it up, and watch it actually work in DC, transient, and frequency response."
 tags: ["python", "pyside6", "electronics", "circuit-simulation", "desktop-app", "gui"]
 math: false
 image: "images/projects/circuit-builder/01_canvas_overview.png"
@@ -10,10 +10,10 @@ category: "Software"
 link: "https://github.com/robertscharlie/Circuit-Builder"
 linkLabel: "Repo"
 highlights:
-  - "Wrote my own nodal analysis solver for DC, transient, and AC, with no NumPy or SciPy"
+  - "Constructed a nodal analysis solver for DC, transient, and AC"
   - "Live Simulate mode shows the voltage at every terminal, updating as you edit the circuit"
-  - "Frequency response and Bode plots, with the sweep range guessed from the circuit's own values"
-  - "Full undo/redo, wire splitting and tapping, and a plain-JSON save format"
+  - "Conduct Frequency response and make Bode plots, for each circuit"
+  - "Saves all files in a plain-JSON save format"
 ---
 
 A desktop app for sketching circuit schematics and simulating them, built with Python and PySide6 (Qt). Drop components onto a canvas, wire them up, and either watch the voltages settle live or sweep a frequency response.
@@ -24,15 +24,15 @@ Components (resistor, battery, capacitor, inductor, bulb, switch, and a bare nod
 
 ![Live simulation, with voltage labelled at every terminal, refreshing as the circuit is edited](../../images/projects/circuit-builder/02_simulate_live.png)
 
-![Inductor kickback caught mid-swing: the switch has just opened and the loop reads -11.9V against the 9V source, before it decays back toward 0](../../images/projects/circuit-builder/03_inductor_kickback.png)
+![Inductor kickback caught mid-swing: the switch has just opened and the loop reads -11.9V against the 9V source, before it decays back towards 0](../../images/projects/circuit-builder/03_inductor_kickback.png)
 
 **Frequency Response** opens a Bode plot panel where you pick the driving source and probe node and flip between magnitude and phase. The sweep range is guessed automatically from the circuit's own component values, and the panel spells out what's being varied and what the plotted values are relative to.
 
-![Frequency response on a high-pass filter, magnitude rolling off toward the low end, with the swept input/output explained above the plot](../../images/projects/circuit-builder/04_frequency_response_highpass_magnitude.png)
+![Frequency response on a high-pass filter, magnitude rolling off towards the low end, with the swept input/output explained above the plot](../../images/projects/circuit-builder/04_frequency_response_highpass_magnitude.png)
 
 ![The same high-pass filter's phase response, on the Phase tab of the same panel](../../images/projects/circuit-builder/05_frequency_response_highpass_phase.png)
 
-The same panel works just as well on a series RLC circuit, though the result looks nothing like the highpass roll-off above: with the resistor, inductor, and capacitor all in series, the two reactances cancel out exactly at the resonant frequency, so the voltage measured between them collapses to almost nothing right at resonance rather than peaking. It shows up as a sharp notch rather than a bump, dropping over 140dB before recovering either side of it.
+The same panel works just as well on a series RLC circuit, though the result looks nothing like the highpass roll-off above. With the resistor, inductor, and capacitor all in series, the two reactances cancel out exactly at the resonant frequency, so the voltage measured between them collapses to almost nothing right at resonance instead of peaking there. The result is a sharp notch, not a bump, dropping over 140dB before recovering on either side.
 
 ![Frequency response of a series RLC circuit, showing a sharp resonant notch rather than a peak, where the inductor and capacitor's reactances cancel each other out](../../images/projects/circuit-builder/07_rlc_resonance.png)
 
