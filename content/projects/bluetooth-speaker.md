@@ -1,5 +1,5 @@
 ---
-title: "ESP32 Bluetooth Speaker with FFT Spectrum Analyser"
+title: "ESP32 Bluetooth Speaker with FFT Spectrum Analyser and OLED"
 slug: "bluetooth-speaker"
 date: 2026-08-30
 draft: false
